@@ -5,13 +5,13 @@
 	<div class ="card-body">
 		<ul class="nav nav-tabs" id="myTab" role="tablist">
 		  <li class="nav-item">
-		    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Cients</a>
+		    <a class="nav-link {{ $ctrl.clientActive }}" id="home-tab" ng-click="$ctrl.tabChange('client')" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Cients</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Rentals</a>
+		    <a class="nav-link {{ $ctrl.rentalActive }}" id="profile-tab" ng-click="$ctrl.tabChange('rental')" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Rentals</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Trailers</a>
+		    <a class="nav-link {{ $ctrl.trailerActive }}" id="contact-tab" ng-click="$ctrl.tabChange('trailer')" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Trailers</a>
 		  </li>
 		</ul>
 		<div class="tab-content" id="myTabContent">
@@ -27,7 +27,7 @@
 	<div class ="card-footer">
 		<div class="row justify-content-md-left">
       		<div class="col-sm-2">
-				<button class="btn btn-primary btn-block" ng-click="$ctrl.newItem($ctrl.itemPath)">New Client</button>
+				<button class="btn btn-primary btn-block" ng-click="$ctrl.newItem()">New {{ $ctrl.item }}</button>
 			</div>
 		</div>
 	</div>

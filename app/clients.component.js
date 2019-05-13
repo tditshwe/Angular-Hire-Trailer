@@ -5,8 +5,9 @@ angular.module("clients").component("clients", {
 	controller: function clientController($http, $location, Hiring)
 	{
 		let ctrl = this;
-		var tab = 'client';
-		this.itemPath = '/createclient';
+		//var tab = 'client';
+		
+		this.itemPath = Hiring.itemPath;
 
 		this.clientHeaders = [
 			{
@@ -58,6 +59,8 @@ angular.module("clients").component("clients", {
 
 		this.$onInit = function()
 		{
+			changeActive();
+
 			$http.get("http://localhost:50227/api/home").then(function(response)
 			{
 				ctrl.clients = response.data.Clients;
@@ -68,26 +71,46 @@ angular.module("clients").component("clients", {
 
 		this.tabChange = function(tab)
 		{
+			//alert(tab)
 			switch (tab)
 			{
 				case 'client':
-					itemPath = 'client';
-					this.item = 'Client';
+					Hiring.itemPath = '/createclient';
+					Hiring.item = 'Client';
 					break;
 				case 'rental':
-					itemPath = 'rental';
-					this.item = 'Rental';
+					Hiring.itemPath = '/createrental';
+					Hiring.item = 'Rental';
 					break;
 				case 'trailer':
-					itemPath = 'trailer';
-					this.item = 'Trailer';
+					Hiring.itemPath = '/createtrailer';
+					Hiring.item = 'Trailer';
 					break;
 			}
+
+			Hiring.active = tab;
 		}
 
-		this.newItem = function(path)
+		this.newItem = function()
 		{
-			$location.path(path)
+			alert(itemPath)
+			$location.path(itemPath)
+		}
+
+		function changeActive()
+		{
+			switch (Hiring.active)
+			{
+				case 'client':
+					ctrl.clientActive = "active";
+				break;
+				case 'rental':
+					ctrl.rentalActive = "active";
+				break;
+				case 'trailer':
+					ctrl.trailerActive = "active";
+				break;
+			}
 		}
 	}
 });
