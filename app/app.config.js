@@ -16,6 +16,9 @@ angular.
         when('/createclient', {
           template: '<create-client></create-client>'
         }).
+        when('/createrental', {
+          template: '<create-rental></create-rental>'
+        }).
         otherwise('/clients');
     }
   ]);

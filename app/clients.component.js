@@ -60,6 +60,7 @@ angular.module("clients").component("clients", {
 		this.$onInit = function()
 		{
 			changeActive();
+			this.item = Hiring.item;
 
 			$http.get("http://localhost:50227/api/home").then(function(response)
 			{
@@ -93,8 +94,8 @@ angular.module("clients").component("clients", {
 
 		this.newItem = function()
 		{
-			alert(itemPath)
-			$location.path(itemPath)
+			alert(Hiring.itemPath)
+			$location.path(Hiring.itemPath)
 		}
 
 		function changeActive()
