@@ -4,12 +4,15 @@ angular.module('core.hiring').
 		var active = "client";
 		var itemPath = '/createclient';
 		var item = 'Client';
+		var location;
 
 		return {
 			axiosGet: axiosGet,
 			active: getActive(),
 			itemPath: getItemPath(),
 			item: getItem(),
+			location: getLocation(),
+			setLocation: setLocation
 		}
 
 		function axiosGet()
@@ -30,6 +33,16 @@ angular.module('core.hiring').
 		function getItem()
 		{
 			return item;
+		}
+
+		function getLocation()
+		{
+			return location;
+		}
+
+		function setLocation(loc)
+		{
+			location = loc;
 		}
 	}
 );

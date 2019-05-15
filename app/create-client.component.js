@@ -18,6 +18,8 @@ angular.module("createClient").component("createClient", {
 
 		this.back = function()
 		{
+			if (Hiring.location == 'rental')
+				
 			$location.path('/clients')
 		}
 	}
