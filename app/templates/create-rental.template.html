@@ -21,8 +21,7 @@
 		      <label for="trailerSelect">Trailer Hired:</label>
 		      <select id="trailerSelect" class="form-control">
 		        <option selected>[Pick Trailer]</option>
-		        <option>BX 44 CK GP</option>
-		        <option>JL 44 XP GP</option>
+		        <option ng-repeat="trailer in $ctrl.trailers" value="{{ trailer.Registration }}">{{ trailer.Registration }}</option>
 		      </select>
 		    </div>
   		</form>

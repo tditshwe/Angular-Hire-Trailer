@@ -2,6 +2,7 @@ angular.module("createClient").component("createClient", {
 	templateUrl: 'templates/create-client.template.html',
 	controller: function clientController($http, $location, Hiring)
 	{
+		alert(Hiring.creating);
 		this.createClient = function()
 		{
 			let client = {
@@ -18,9 +19,10 @@ angular.module("createClient").component("createClient", {
 
 		this.back = function()
 		{
-			if (Hiring.location == 'rental')
-				
-			$location.path('/clients')
+			if (Hiring.creating)
+				$location.path('/createclient')
+			else
+				$location.path('/clients')
 		}
 	}
 });

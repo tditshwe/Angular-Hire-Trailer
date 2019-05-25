@@ -94,7 +94,6 @@ angular.module("clients").component("clients", {
 
 		this.newItem = function()
 		{
-			alert(Hiring.itemPath)
 			$location.path(Hiring.itemPath)
 		}
 

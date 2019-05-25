@@ -4,15 +4,15 @@ angular.module('core.hiring').
 		var active = "client";
 		var itemPath = '/createclient';
 		var item = 'Client';
-		var location;
+		var creating = false;
 
 		return {
 			axiosGet: axiosGet,
 			active: getActive(),
 			itemPath: getItemPath(),
 			item: getItem(),
-			location: getLocation(),
-			setLocation: setLocation
+			creating: getCreating(),
+			setCreating: setCreating
 		}
 
 		function axiosGet()
@@ -35,14 +35,14 @@ angular.module('core.hiring').
 			return item;
 		}
 
-		function getLocation()
+		function getCreating()
 		{
-			return location;
+			return creating;
 		}
 
-		function setLocation(loc)
+		function setCreating(cr)
 		{
-			location = loc;
+			creating = cr;
 		}
 	}
 );
