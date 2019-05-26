@@ -2,6 +2,8 @@ angular.module("createRental").component("createRental", {
 	templateUrl: 'templates/create-rental.template.html',
 	controller: function clientController($http, $location, Hiring)
 	{
+		var ctrl = this;
+
 		this.$onInit = function()
 		{
 			this.trailers = [
@@ -9,7 +11,7 @@ angular.module("createRental").component("createRental", {
 				{ Registration: "JL 44 XP GP", IsHired: false}
 			];
 
-			$http.get("http://localhost:50227/api/home").then(function(response)
+			$http.get("http://localhost:50582/api/home").then(function(response)
 			{
 				ctrl.clients = response.data.Clients;
 				ctrl.trailers = response.data.Trailers;
@@ -19,7 +21,7 @@ angular.module("createRental").component("createRental", {
 
 		this.createClient = function()
 		{
-			Hiring.setCreating(true)
+			Hiring.creating = true;
 			$location.path('/createclient');
 		}
 	}

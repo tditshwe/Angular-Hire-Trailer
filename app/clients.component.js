@@ -16,7 +16,7 @@ angular.module("clients").component("clients", {
 			},
 			{
 				text: "Lastname",
-				value: "LastName"
+				value: "Lastname"
 			},
 			{
 				text: "Email",
@@ -62,10 +62,11 @@ angular.module("clients").component("clients", {
 			changeActive();
 			this.item = Hiring.item;
 
-			$http.get("http://localhost:50227/api/home").then(function(response)
+			$http.get("http://localhost:50582/api/home").then(function(response)
 			{
 				ctrl.clients = response.data.Clients;
 				ctrl.rentals = response.data.Rentals;
+				ctrl.trailers = response.data.Trailer;
 				//alert(JSON.stringify(ctrl.clients));
 			});
 		}

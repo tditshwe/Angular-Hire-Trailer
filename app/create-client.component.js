@@ -20,7 +20,7 @@ angular.module("createClient").component("createClient", {
 		this.back = function()
 		{
 			if (Hiring.creating)
-				$location.path('/createclient')
+				$location.path('/createrental')
 			else
 				$location.path('/clients')
 		}

@@ -11,9 +11,8 @@ angular.module('core.hiring').
 			active: getActive(),
 			itemPath: getItemPath(),
 			item: getItem(),
-			creating: getCreating(),
-			setCreating: setCreating
-		}
+			creating: getCreating()
+		};
 
 		function axiosGet()
 		{
@@ -38,11 +37,6 @@ angular.module('core.hiring').
 		function getCreating()
 		{
 			return creating;
-		}
-
-		function setCreating(cr)
-		{
-			creating = cr;
 		}
 	}
 );
