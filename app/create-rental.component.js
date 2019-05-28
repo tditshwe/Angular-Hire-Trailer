@@ -24,5 +24,11 @@ angular.module("createRental").component("createRental", {
 			Hiring.creating = true;
 			$location.path('/createclient');
 		}
+
+		this.complete = function()
+		{
+			let trailer = JSON.parse(this.trailer)
+			alert(this.trailer);
+		}
 	}
 });
