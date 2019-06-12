@@ -27,8 +27,20 @@ angular.module("createRental").component("createRental", {
 
 		this.complete = function()
 		{
-			let trailer = JSON.parse(this.trailer)
+			let trailerId = JSON.parse(this.trailer)
 			alert(this.trailer);
+
+			let rental = {
+				trailerRegistration: this.trailerReg,
+				clientId: this.clientId
+			}
+
+			Hiring.config.done(function()
+			{
+				$http.post(Hiring.getBaseUrl() + "/api/home", rental).then(function(response)
+				{
+				});
+			});
 		}
 	}
 });

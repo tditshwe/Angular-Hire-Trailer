@@ -8,10 +8,9 @@
   		<form name="form" novalidate>
   			<div class="form-group">
 		      <label for="clientSelect">Client Renting:</label>
-		      <select id="clientSelect" class="form-control">
+		      <select ng-model="clientId" id="clientSelect" class="form-control">
 		        <option selected>[Pick Client]</option>
-		        <option>Musi Moimane</option>
-		        <option>Sir Isaac</option>
+		        <option ng-repeat="client in $ctrl.clients" value="{{ client.Id }}">{{ client.Name }} {{ client.Lastname }}</option>
 		      </select>
 		      <br/>
 		      First time client?
@@ -19,9 +18,9 @@
 		    </div>
 		    <div class="form-group">
 		      <label for="trailerSelect">Trailer Hired:</label>
-		      <select ng-model="$ctrl.trailer" id="trailerSelect" class="form-control">
+		      <select ng-model="$ctrl.trailerReg" id="trailerSelect" class="form-control">
 		        <option selected>[Pick Trailer]</option>
-		        <option ng-repeat="trailer in $ctrl.trailers" value="{{ trailer }}">{{ trailer.Registration }}</option>
+		        <option ng-repeat="trailer in $ctrl.trailers" value="{{ trailer.Registration }}">{{ trailer.Registration }}</option>
 		      </select>		      
 		    </div>
 		    <div class="form-group">
