@@ -8,8 +8,8 @@
   		<form name="form" novalidate>
   			<div class="form-group">
 		      <label for="clientSelect">Client Renting:</label>
-		      <select ng-model="clientId" id="clientSelect" class="form-control">
-		        <option selected>[Pick Client]</option>
+		      <select ng-model="$ctrl.clientId" id="clientSelect" class="form-control">
+		        <option value="0">[Pick Client]</option>
 		        <option ng-repeat="client in $ctrl.clients" value="{{ client.Id }}">{{ client.Name }} {{ client.Lastname }}</option>
 		      </select>
 		      <br/>
@@ -19,7 +19,7 @@
 		    <div class="form-group">
 		      <label for="trailerSelect">Trailer Hired:</label>
 		      <select ng-model="$ctrl.trailerReg" id="trailerSelect" class="form-control">
-		        <option selected>[Pick Trailer]</option>
+		        <option value="0">[Pick Trailer]</option>
 		        <option ng-repeat="trailer in $ctrl.trailers" value="{{ trailer.Registration }}">{{ trailer.Registration }}</option>
 		      </select>		      
 		    </div>

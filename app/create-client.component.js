@@ -10,9 +10,18 @@ angular.module("createClient").component("createClient", {
 				email: this.email
 			}
 
-			$http.post("http://localhost:50227/api/client", client).then(function(response)
+			Hiring.config.done(function()
 			{
-				$location.path('/clients')
+				$http.post(Hiring.getBaseUrl() + "/api/client", client).then(function(response)
+				{
+					if (Hiring.creating)
+					{
+						Hiring.newClient = response.data
+						$location.path('/createrental')
+					}
+					else
+						$location.path('/clients')
+				});
 			});
 		}
 

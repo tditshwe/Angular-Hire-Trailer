@@ -5,7 +5,8 @@ angular.module('core.hiring').
 		var itemPath = '/createclient';
 		var item = 'Client';
 		var creating = false;
-		var baseUrl;
+		var baseUrl, newClient;
+		var curTrailer = "0";
 
 		return {
 			axiosGet: axiosGet,
@@ -14,7 +15,9 @@ angular.module('core.hiring').
 			item: getItem(),
 			creating: getCreating(),
 			config: getConfig(),
-			getBaseUrl: getBaseUrl
+			getBaseUrl: getBaseUrl,
+			newClient: getNewClient(),
+			trailReg: getCurTrail()
 		};
 
 		function axiosGet()
@@ -60,6 +63,16 @@ angular.module('core.hiring').
 		function getBaseUrl()
 		{
 			return baseUrl;
+		}
+
+		function getNewClient()
+		{
+			return newClient;
+		}
+
+		function getCurTrail()
+		{
+			return curTrailer;
 		}
 	}
 );
