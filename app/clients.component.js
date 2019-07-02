@@ -65,9 +65,8 @@ angular.module("clients").component("clients", {
 
 			Hiring.config.done(function()
 			{
-				$http.get(Hiring.getBaseUrl() + "/api/home").then(function(response)
+				$http.get(Hiring.getBaseUrl() + "/api/home/getall").then(function(response)
 				{
-					alert();
 					ctrl.clients = response.data.Clients;
 					ctrl.rentals = response.data.Rentals;
 					ctrl.trailers = response.data.Trailer;

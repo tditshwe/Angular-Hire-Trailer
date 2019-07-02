@@ -12,7 +12,7 @@ angular.module("createClient").component("createClient", {
 
 			Hiring.config.done(function()
 			{
-				$http.post(Hiring.getBaseUrl() + "/api/client", client).then(function(response)
+				$http.post(Hiring.getBaseUrl() + "/api/client/createclient", client).then(function(response)
 				{
 					if (Hiring.creating)
 					{

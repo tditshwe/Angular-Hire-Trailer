@@ -8,7 +8,7 @@ angular.module("createRental").component("createRental", {
 		{
 			Hiring.config.done(function()
 			{			
-				$http.post(Hiring.getBaseUrl() + "/api/home/available").then(function(response)
+				$http.get(Hiring.getBaseUrl() + "/api/home/available").then(function(response)
 				{
 					ctrl.clients = response.data.Clients;
 					ctrl.trailers = response.data.Trailers;
@@ -39,12 +39,12 @@ angular.module("createRental").component("createRental", {
 
 			let rental = {
 				TraileRegistration: this.trailerReg,
-				clientId: parseInt(this.clientId)
+				ClientId: parseInt(this.clientId)
 			};
 			
 			Hiring.config.done(function()
 			{			
-				$http.post(Hiring.getBaseUrl() + "/api/rental", rental).then(function(response)
+				$http.post(Hiring.getBaseUrl() + "/api/rental/postrental", rental).then(function(response)
 				{
 					//alert(JSON.stringify(response.data))
 					Hiring.creating = false;
