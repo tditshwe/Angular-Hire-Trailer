@@ -1,1 +1,34 @@
-<h4>Title: {{ name }}</h4>
+<h2>{{ title }}</h2>
+
+<ul class="heroes">
+  <li *ngFor="let item of items">
+  <!--<li *ngFor="let hero of heroes"
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)">-->
+    <span class="badge"></span>
+    <span class="client"> 
+        <b *ngIf="currentTab == 'clients'">{{ item.name }} {{ item.lastname }}</b>
+        <b *ngIf="currentTab == 'rentals'">{{ item.client }}</b> <br/>
+        <small><font color="#607D8B">
+          <span *ngIf="currentTab == 'clients'">{{ item.email }}</span>
+          <span *ngIf="currentTab == 'rentals'">{{ item.trailer }}</span>
+        </font></small>      
+    </span>
+    <div padding class="date">
+      <span *ngIf="currentTab == 'rentals'">Date of rental: 2019-07-02 15:44:10.830</span>
+      <span *ngIf="currentTab == 'clients'">Last rental: 2019-07-02 15:44:10.830</span>
+    </div>
+  </li>
+</ul>
+
+<!--<div *ngIf="selectedHero">
+
+  <h2>{{selectedHero.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedHero.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedHero.name" placeholder="name"/>
+    </label>
+  </div>
+
+</div>-->

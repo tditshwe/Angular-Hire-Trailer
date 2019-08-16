@@ -17,16 +17,13 @@
   </div>
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-      <item-list name='Clients'></item-list>
-      Clients list goes here
+      <item-list title='Clients' currentTab='clients' [items]="clients"></item-list>
     </div>
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-      <item-list name="Rentals"></item-list>
-      Rentals list goes here
+      <item-list title="Rentals" currentTab='rentals' [items]="rentals"></item-list>
     </div>
     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-      <item-list name="Trailers"></item-list>
-      Trailers go here
+      <item-list title="Trailers"></item-list>
     </div>
       <!--<list-table title="Trailers" headers="$ctrl.trailerHeaders" item-list="$ctrl.trailers"></list-table>-->
   </div>
