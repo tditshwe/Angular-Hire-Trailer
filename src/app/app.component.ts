@@ -29,4 +29,17 @@ export class AppComponent {
     date: "2019-07-02 15:44:10.830",
     trailer: "CP 55 VV GP"
   }];
+
+  trailers = [{
+    registration: "CP 55 VV GP",
+    isRented: true,
+    isBooked: false,
+    clientRenting: "Tshego Sebata"
+  },
+  {
+    registration: "CP 55 VV GP",
+    isRented: false,
+    isBooked: false,
+    clientRenting: ""
+  }]
 }

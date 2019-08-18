@@ -9,9 +9,15 @@
     <span class="client"> 
         <b *ngIf="currentTab == 'clients'">{{ item.name }} {{ item.lastname }}</b>
         <b *ngIf="currentTab == 'rentals'">{{ item.client }}</b> <br/>
+        <b *ngIf="currentTab == 'trailers'">{{ item.registration }}</b> <br/>
         <small><font color="#607D8B">
           <span *ngIf="currentTab == 'clients'">{{ item.email }}</span>
           <span *ngIf="currentTab == 'rentals'">{{ item.trailer }}</span>
+          <span *ngIf="currentTab == 'trailers'">
+            <span *ngIf="item.isRented; else notRented">Currently rented by {{ item.clientRenting }}</span>
+
+            <ng-template #notRented> Available for renting</ng-template>
+          </span>
         </font></small>      
     </span>
     <div padding class="date">

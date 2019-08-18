@@ -23,14 +23,14 @@
       <item-list title="Rentals" currentTab='rentals' [items]="rentals"></item-list>
     </div>
     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-      <item-list title="Trailers"></item-list>
+      <item-list title="Trailers" currentTab='trailers' [items]="trailers"></item-list>
     </div>
       <!--<list-table title="Trailers" headers="$ctrl.trailerHeaders" item-list="$ctrl.trailers"></list-table>-->
   </div>
   <div class ="card-footer">
 		<div class="row justify-content-md-left">
       <div class="col-sm-2">
-				<button class="btn btn-primary btn-block" ng-click="$ctrl.newItem()">New Item</button>
+				<button class="btn btn-secondary btn-block" ng-click="$ctrl.newItem()">New Item</button>
 			</div>
 		</div>
 	</div>
