@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppService } from '../services/app.service';
 
 @Component({
   selector: 'app-root',
@@ -8,16 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'hire-trailer';
 
-  clients = [{
-    name: "Tshego",
-    lastname: "Sebata",
-    email: "tshego@domain.com"
-  },
-  {
-      name: "shade",
-      lastname: "Samba",
-      email: "shade@domain.com"
-  }];
+  clients: any;
 
   rentals = [{
     client: "Tshego Sebata",
@@ -42,4 +34,14 @@ export class AppComponent {
     isBooked: false,
     clientRenting: ""
   }]
+
+  constructor(private app: AppService) {
+    this.app.getList('home').subscribe(response => 
+    {
+      alert(JSON.stringify(response.clients))
+      this.clients = response.clients;
+    }, err => {
+      console.log(err)
+    });
+  }
 }

@@ -15,7 +15,6 @@
           <span *ngIf="currentTab == 'rentals'">{{ item.trailer }}</span>
           <span *ngIf="currentTab == 'trailers'">
             <span *ngIf="item.isRented; else notRented">Currently rented by {{ item.clientRenting }}</span>
-
             <ng-template #notRented> Available for renting</ng-template>
           </span>
         </font></small>      
